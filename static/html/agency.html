@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+</head>
+
+<body>
+
+    <div id="launch">
+        <div id="continuePage">
+            <h1>Press "Continue" to proceed.</h1>
+            <button class="jspsych-btn" id="continue">Continue</button>
+        </div>
+    </div>
+
+    <div class="minWidth">
+
+        <div class="clsHeader" id="clsHeader">
+            <div class="horizontal-center" id="horizontal-center">
+                <button class="headButton" disabled>Start</button>
+                <button class="headButton" disabled>More Blogs</button>
+                <button class="headButton" disabled>About Us</button>
+                <img id="lupe" src="static/img/lupe.png" />
+            </div>
+        </div>
+
+        <div class="head">
+
+            <div class="leftHeader" id="leftHeader">
+                <img class="borderless" src="static/img/agency/logo.png" />
+            </div>
+
+            <div class="rightHeader" id="rightHeader">
+                This is an online shop.
+            </div>
+
+            <div class="leftTitle" id="leftTitle">
+                Accessoires &amp; More
+            </div>
+
+            <div class="rightTitle" id="rightTitle">
+                Here you will find your new favorite piece!
+            </div>
+        </div>
+
+        <div id="main">
+            <div class="container" id="page">
+
+                <div class="art1" id="art1">
+                    <figure>
+                        <img class="borderless center" id="sunglasses01" src="static/img/agency/sunglasses.jpg" onclick="mark(this)" />
+                        <figcaption class="desc">
+                            <pbrown>Special offer for sunglasses!</pbrown>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="text1" id="text1">
+                    <h3>Design</h3>
+                    <p class="pageFont"> Trendy and vintage decor so your entire space can feel fresh, on-trend but timeless, and refined. <u>view more</u></p>
+                </div>
+
+                <div class="art2" id="art2">
+                    <figure>
+                        <img class="borderless center" id="decor01" src="static/img/agency/decor.jpg" onclick="mark(this)" />
+                        <figcaption class="desc">Shop new home decor!</figcaption>
+                    </figure>
+                </div>
+
+                <div class="art3" id="art3">
+                    <figure>
+                        <img class="borderless center" id="lens01" src="static/img/agency/lense.jpg" onclick="mark(this)" />
+                        <figcaption class="desc">
+                            <pbrown>Check out our new arrival!</pbrown>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="text2" id="text2">
+                    <h3>Brand</h3>
+                    <p class="pageFont">Fashion is fast moving like no other industry. What is trendy today may be out of fashion tomorrow. That is why a frequent change of product range is part of everyday online life. Here's the facts on [...]
+                    </p>
+                </div>
+
+                <div class="art4" id="art4">
+                    <figure>
+                        <img class="borderless center" id="watch01" src="static/img/agency/watch.jpg" onclick="mark(this)" />
+                        <figcaption class="desc">Buy your new watch now!</figcaption>
+                    </figure>
+                </div>
+
+                <div class="art5" id="art5">
+                    <figure>
+                        <img class="borderless center" id="work01" src="static/img/agency/items.jpg" onclick="mark(this)" />
+                        <figcaption class="desc">Items for sale!</figcaption>
+                    </figure>
+                </div>
+
+                <div class="text3" id="text3">
+                    <h3>Marketing</h3>
+                    <p class="pageFont">Here you will find a huge selection of affordable fashion created by designers from around the world. Shop online for wrist watches, glasses, shoes, [...]
+                    </p>
+                </div>
+
+                <div class="art6" id="art6">
+                    <figure>
+                        <img class="borderless center" id="shoes01" src="static/img/agency/shoes.jpg" onclick="mark(this)" />
+                        <figcaption class="desc">
+                            <pbrown>Trendy shoes</pbrown>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="buttonRating">
+                <button type="jspsych-btn" id="btnRating" class="btnRating" onclick="goToEvaluate()">
+					Rate the page!</button>
+            </div>
+            <div class="timer">
+                <p id="timerSeconds"></p>
+            </div>
+            <div class="pagingBtn" id="pagingBtn">
+                <a class="active" href="javascript:loadPage()" id="p1">Home</a>
+            </div>
+            <div class="footerLeft" id="footerLeft">
+                <pre>If you're happy, so are we!     Call: 1234/567890       Email: accessoiresandmore@survey.example</pre>
+            </div>
+        </div>
+
+    </div>
+    <button id="btnRatingGoOn"></button>
+    <!-- Required by trial-->
+    <button id="endTrial"></button>
+
+</body>
+
+<!-- //include the loading script from game.js configuration -->
+<script type="text/javascript">
+    replay = location.search.replace("?", "").split("&")[0].split("=")[0] == "page";
+    //load script only if not in replay mode
+    if (!replay) {
+        //remove old tag (necessary for training/test switching)
+        var elem = document.getElementById("waterfall");
+        if (elem) {
+            elem.parentNode.removeChild(elem);
+        }
+
+        //add new tag
+        var s = document.createElement("script");
+        s.id = "waterfall";
+        s.type = "text/javascript";
+        s.src = "static/js/waterfall.js";
+
+        if (!document.getElementById("waterfall")) {
+            document.body.appendChild(s);
+        }
+
+        jsPsych.currentTrial().data.start = jsPsych.totalTime();
+    }
+</script>
+
+
+</html>

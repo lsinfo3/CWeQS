@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+    <title>BrainGame - Web Page Loading</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="static/css/jspsych.css" />
+    <link rel="stylesheet" href="static/css/main.css" />
+    <link rel="stylesheet" href="static/css/inst.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="static/js/external/jstat.min.js"></script>
+    <script src="static/js/external/jspsych.js"></script>
+    <script src="static/js/plugins/jspsych-external-html.js"></script>
+    <script src="static/js/plugins/jspsych-survey-multi-choice.js"></script>
+    <script src="static/js/plugins/jspsych-html-keyboard-response.js"></script>
+    <script src="static/js/plugins/jspsych-html-button-response.js"></script>
+    <script src="static/js/plugins/jspsych-html-slider-response.js"></script>
+    <script src="static/js/plugins/jspsych-instructions.js"></script>
+    <script src="static/js/plugins/jspsych-survey-text.js"></script>
+    <script src="static/js/plugins/jspsych-survey-multi-choice.js"></script>
+    <script src="static/js/external/sha256.min.js"></script>
+    <!-- Config -->
+    <script src="config.js"></script>
+    <!-- Event tracking -->
+    <script src="static/js/external/load.min.js"></script>
+    <!-- Components -->
+    <script src="static/js/components/checkCredentials.js"></script>
+    <script src="static/js/components/checkWorkers.js"></script>
+    <script src="static/js/components/checkScreenSize.js"></script>
+    <script src="static/js/components/checkBrowserSize.js"></script>
+    <script src="static/js/components/instructionsSurvey.js"></script>
+    <script src="static/js/components/instructionsTrainingOne.js"></script>
+    <script src="static/js/components/instructionsTrainingTwo.js"></script>
+    <script src="static/js/components/instructionsBeforeTest.js"></script>
+    <script src="static/js/components/instructionsDebrief.js"></script>
+    <script src="static/js/components/postTest.js"></script>
+    <script src="static/js/components/conditionBlock.js"></script>
+    <script src="static/js/components/questionnaire/age.js"></script>
+    <script src="static/js/components/questionnaire/browsing.js"></script>
+    <script src="static/js/components/questionnaire/education.js"></script>
+    <script src="static/js/components/questionnaire/gender.js"></script>
+    <script src="static/js/components/questionnaire/origin.js"></script>
+    <script src="static/js/components/questionnaire/profession.js"></script>
+    <!-- Websites -->
+    <script src="static/js/websites/agency.js"></script>
+    <script src="static/js/websites/news.js"></script>
+    <script src="static/js/websites/blog.js"></script>
+    <script src="static/js/websites/preload.js"></script>
+    <!-- Targets and Conditions-->
+    <script src="static/js/randomNumber.js"></script>
+    <script src="static/js/targets.js"></script>
+    <script src="static/js/prepareConditions.js"></script>
+    <script src="static/js/conditions/combinations.js"></script>
+    <script src="static/js/conditions/base.js"></script>
+    <script src="static/js/conditions/baseSwap.js"></script>
+    <script src="static/js/conditions/fid.js"></script>
+    <script src="static/js/conditions/lcp.js"></script>
+    <script src="static/js/conditions/cls.js"></script>
+</head>
+
+<body>
+</body>
+
+<script type="text/javascript">
+    let params = location.search.replace("?", "").split("&");
+    let pageType = params[0].split("=")[1];
+    console.log(pageType);
+
+    if (pageType == "news") {
+        $('body').load('static/html/news.html');
+    } else if (pageType == "agency") {
+        $('body').load('static/html/agency.html');
+    } else if (pageType == "blog") {
+        $('body').load("static/html/blog.html");
+    } else {
+        console.error("Invalid page!");
+    }
+
+    var r = document.createElement("script");
+    r.id = "replay";
+    r.type = "text/javascript";
+    r.src = "replay.js";
+    if (!document.getElementById("replay")) {
+        document.body.appendChild(r);
+    }
+
+    var elem = document.getElementById("waterfall");
+    if (elem) {
+        elem.parentNode.removeChild(elem);
+    }
+</script>
+
+</html>

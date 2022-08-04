@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <div id="launch">
+        <h1>Press "Continue" to proceed.</h1>
+        <div id="continuePage">
+            <button class="jspsych-btn" id="continue">Continue</button>
+        </div>
+    </div>
+
+    <div class="minWidth">
+
+        <div class="clsHeader" id="clsHeader">
+            <div class="horizontal-center" id="horizontal-center">
+                <button class="Xbutton headButton" disabled>Start</button>
+                <button class="headButton" disabled>More Blogs</button>
+                <button class="headButton" disabled>About Us</button>
+                <img id="lupe" src="static/img/lupe.png" />
+            </div>
+        </div>
+
+
+        <div class="head">
+            <div class="leftHeaderN" id="leftHeaderN">
+                <img class="borderless" src="static/img/news/globe.png" />
+            </div>
+            <div class="rightHeaderN" id="rightHeaderN">
+                This is a newspage.
+            </div>
+            <div class="leftTitleN" id="leftTitleN">
+                CANUCKINGTON POST
+            </div>
+            <div class="rightTitleN" id="rightTitleN">
+                Learn more about what's happening in the world. Stay informed! Of course with us!
+            </div>
+        </div>
+
+        <div id="main">
+            <div class="containerN" id="page">
+                <div class="artN1" id="artN1">
+                    <figure>
+                        <img id="casey1" class="borderless center" src="static/img/news/curry.jpg" onclick="mark(this)" />
+                        <figcaption class="desc" href="#">News: New Player in the Los Angeles Lakers!
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="textN1" id="textN1">
+                    <h3>Latest: Manchester United vs. Liverpool</h3>
+                    <p class="pageFont">The game of Manchester United vs. Liverpool ended with an unexpected score of 0:5. [...]</p>
+                </div>
+
+                <div class="advertN1" id="advertN1">
+                    <img class="borderless center" src="static/img/news/sidead1.png" onclick="mark(this)" />
+                </div>
+
+                <div class="textN2" id="textN2">
+                    <h3>Today's Sports News</h3>
+                    <p class="pageFont">New Zealand golfer Ko has fired one of the best scores of the final round at the BMW Ladies Championship in Busan, South Korea. [...]
+                    </p>
+                </div>
+
+                <div class="artN2" id="artN2">
+                    <figure>
+                        <img id="sport1" class="borderless center" src="static/img/news/kids.jpg" onclick="mark(this)" />
+                        <figcaption class="desc" href="#">New Club Activities for Children
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="advertN2" id="advertN2">
+                    <img class="borderless center" src="static/img/news/sidead2.png" onclick="mark(this)" />
+                </div>
+
+                <div class="artN3" id="artN3">
+                    <figure>
+                        <img id="wayne1" class="borderless center" src="static/img/news/team.jpg" onclick="mark(this)" />
+                        <figcaption class="desc" href="#">News: Stunning Performance at Recent Match
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="textN3" id="textN3">
+                    <h3>Money</h3>
+                    <p class="pageFont">Manchester United’s Cristiano Ronaldo is the World’s Highest-Paid Soccer Player in 2021 and takes the spotlight. [...]
+                    </p>
+                </div>
+
+                <div class="advertN3" id="advertN3">
+                    <img class="borderless center" src="static/img/news/sidead3.png" onclick="mark(this)" />
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="buttonRating">
+                <button type="jspsych-btn" id="btnRating" class="btnRating" onclick="goToEvaluate()">Rate the page!</button>
+            </div>
+            <div class="timer">
+                <p id="timerSeconds"></p>
+            </div>
+            <div class="pagingBtn" id="pagingBtn">
+                <a class="active" href="javascript:loadPage()" id="p1">Home</a>
+            </div>
+
+            <div class="footerLeftN" id="footerLeftN">
+                <pre>We got this!       Call: 0123/456789       Email: canuckingtonpost@survey.example</pre>
+            </div>
+        </div>
+
+    </div>
+    <button id="btnRatingGoOn"></button>
+    <!-- Required by trial-->
+    <button id="endTrial"></button>
+</body>
+
+<!-- include the loading script from game.js configuration -->
+<script type="text/javascript">
+    replay = location.search.replace("?", "").split("&")[0].split("=")[0] == "page";
+    //load script only if not in replay mode
+    if (!replay) {
+        //remove old tag (necessary for training/test switching)
+        var elem = document.getElementById("waterfall");
+        if (elem) {
+            elem.parentNode.removeChild(elem);
+        }
+
+        //add new tag
+        var s = document.createElement("script");
+        s.id = "waterfall";
+        s.type = "text/javascript";
+        s.src = "static/js/waterfall.js";
+
+        if (!document.getElementById("waterfall")) {
+            document.body.appendChild(s);
+        }
+
+        jsPsych.currentTrial().data.start = jsPsych.totalTime();
+    }
+</script>

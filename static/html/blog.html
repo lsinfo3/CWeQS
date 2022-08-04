@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <div id="launch">
+        <div id="continuePage">
+            <h1>Press "Continue" to proceed.</h1>
+            <button class="jspsych-btn" id="continue">Continue</button>
+        </div>
+    </div>
+
+    <div class="minWidth">
+        <div class="clsHeader" id="clsHeader">
+            <div class="horizontal-center" id="horizontal-center">
+                <button class="headButton" disabled>Start</button>
+                <button class="headButton" disabled>More Blogs</button>
+                <button class="headButton" disabled>About Us</button>
+                <img id="lupe" src="static/img/lupe.png" />
+            </div>
+        </div>
+
+        <div class="head">
+
+            <div class="rightHeader" id="rightHeader">
+                This is an online blog.
+            </div>
+
+            <div class="leftTitle" id="leftTitle">
+                A Blog About Sustainability
+            </div>
+            <div class="rightTitle" id="rightTitle">
+                Learn more about Sustainability with us!
+            </div>
+        </div>
+
+        <div id="main">
+            <div class="containerB" id="page">
+                <img class="blogimg" id="blogimg" src="static/img/blog/sustainable.png" />
+                <div class="blogtext" id="blogtext">
+                    <p class="pageFont"> Sustainability is a principle of action for the use of resources, in which a permanent satisfaction of needs through the preservation of the natural regenerative ability of the systems involved (especially living beings and ecosystems)
+                        should be guaranteed. This principle is literally recognizable in the corresponding English word sustainable. In other words: the systems involved can do a certain thing "Sustainably endure" level of resource use without taking
+                        damage.
+                        <span class="hideElement" id="URL1">www.plant-based-products.com/start/</span> The principle was first applied in forestry: only as much wood should be felled in the forest as can permanently grow back. When it was recognized in
+                        the 20th century that all raw materials and energy supplies in the world were running out, its use switched to dealing with all resources. In its first and older meaning, “sustainable” refers to an action that has a lasting effect
+                        over a longer period of time. Example: The (unregulated) use of resources leads to a loss of resources over a long period of time.
+                        <span class="hideElement" id="URL2">www.all-about-handmade-fashion.com/about-us/</span> In current language use, different conceptions compete: an everyday understanding that states that something is still may or should endure,
+                        endure, linger, or exist long after it is built, begun, and/or put into motion; different political views that correspond to this basic understanding of durability the position of different interest groups vary.
+                        <span class="hideElement" id="URL3">www.buy-sustainable-clothes.com/pants/</span> This expansion initially resulted from the global environmental policy debate since the Second World War, in particular with the definitions by the
+                        World Commission for Environment and Development (Brundtland Commission) set up by the United Nations in 1983, the Club of Rome or the Enquete Commission of the German Bundestag.
+                        <span class="hideElement" id="URL4">www.help-your-environment.com/funds/</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="buttonRating">
+                <button type="jspsych-btn" id="btnRating" class="btnRating" onclick="goToEvaluate()">
+                                        Rate the loading time of this page!</button>
+            </div>
+            <div class="timer">
+                <p id="timerSeconds"></p>
+            </div>
+            <div class="pagingBtn" id="pagingBtn">
+                <a class="active" href="javascript:loadPage()" id="p1">Start</a>
+            </div>
+
+            <div class="footerLeft" id="footerLeft">
+                <pre>Save The Earth!       Call: 0022/7154924       Email: Sustainability.blog@example-mail.com</pre>
+            </div>
+        </div>
+
+    </div>
+    <button id="btnRatingGoOn"></button>
+    <!-- Required by trial-->
+    <button id="endTrial"></button>
+</body>
+
+<!-- include the loading script from game.js configuration -->
+<script type="text/javascript">
+    replay = location.search.replace("?", "").split("&")[0].split("=")[1] == "blog";
+    //load script only if not in replay mode
+    if (!replay) {
+        //remove old tag (necessary for training/test switching)
+        var elem = document.getElementById("waterfall");
+        if (elem) {
+            elem.parentNode.removeChild(elem);
+        }
+
+        //add new tag
+        var s = document.createElement("script");
+        s.id = "waterfall";
+        s.type = "text/javascript";
+        s.src = "static/js/waterfall.js";
+
+        if (!document.getElementById("waterfall")) {
+            document.body.appendChild(s);
+        }
+
+        jsPsych.currentTrial().data.start = jsPsych.totalTime();
+    }
+</script>
+
+
+
+</html>

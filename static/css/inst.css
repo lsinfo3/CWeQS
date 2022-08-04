@@ -1,0 +1,124 @@
+#introText {
+    width: 80vw;
+    margin: 0 auto;
+    padding: 1rem;
+    text-align: left;
+    font-size: 2vh;
+    line-height: 1;
+}
+
+#introText header h1 {
+    margin-top: 0;
+    text-align: left;
+}
+
+#introText h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 3vh;
+}
+
+h2 {
+    font-size: 2vh;
+}
+
+section {
+    margin-top: 3rem;
+}
+
+a {
+    text-decoration: none;
+    color: #2eec96;
+}
+
+hr {
+    height: 1px;
+    padding: 0;
+    border: 0;
+    background-color: #ccc;
+}
+
+header p {
+    text-align: left;
+}
+
+p.thick {
+    font-weight: bold;
+}
+
+.instructions ul,
+.instructions ol {
+    margin: 0.075rem 0;
+}
+
+.instructions li {
+    margin-bottom: 0.25rem;
+}
+
+.instructions ul {
+    list-style: none;
+    padding-left: 50px;
+    margin: 0;
+}
+
+.instructions ul li {
+    position: relative;
+    padding-left: 1em;
+}
+
+.instructions ul li::before {
+    position: absolute;
+    left: 0;
+    content: '•';
+}
+
+.instructions ol {
+    padding-left: 1.2rem;
+}
+
+#instructionVisual {
+    border-style: solid;
+    border-color: black;
+    border-image-width: 2px;
+    height: 30vh;
+    width: auto;
+}
+
+#rating {
+    border: 0.1vw solid black;
+}
+
+#consent {
+    margin-bottom: 1vh;
+    font-size: 1.5vh;
+    padding: 1vh
+}
+
+img.instImg {
+    height: 20vh;
+    width: auto;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+#instBtn {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.beforeTestImage {
+    width: 60%;
+    height: auto;
+}
