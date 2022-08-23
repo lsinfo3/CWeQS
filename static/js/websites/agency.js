@@ -146,7 +146,7 @@ class Agency {
         $(".lcp").find("img").addClass("lcpimg");
         $(".lcp").find("img").removeClass("center");
         $(".lcp").find("img").removeClass("object-borderless");
-        $('.container').css({ "grid-template-rows": "5vh 25vh 17vh 17vh" });
+        $('.container').css({ "grid-template-rows": "10vh 25vh 55vh 17vh" });
         $('.container').css({ "grid-template-columns": "auto 25vw auto 35vw auto 25vw auto" });
     }
 

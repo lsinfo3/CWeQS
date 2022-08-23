@@ -46,6 +46,11 @@
     width: 50%;
 }
 
+#main img {
+    height: 15vh;
+    display: block;
+}
+
 .clsHeader {
     display: none;
     margin-left: auto;

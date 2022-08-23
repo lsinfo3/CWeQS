@@ -5,7 +5,7 @@ function ConditionBlock(conditions, tickAmount) {
         return {
             type: 'survey-multi-choice',
             questions: [{
-                prompt: "<b>How did you experience the loading of the last page?</b><p>'Bad' refers to the slowest experience, 'Excellent' refers to the fastest experience.</p>",
+                prompt: "<b>How did you experience the loading of the last page?</b><p>'Bad' refers to the worst experience, 'Excellent' refers to the best experience.</p>",
                 options: ["Excellent", "Good", "Fair", "Poor", "Bad"],
                 required: true,
                 horizontal: false

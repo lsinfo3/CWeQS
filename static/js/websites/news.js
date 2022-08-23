@@ -143,7 +143,7 @@ class News {
         $(".lcp").find("img").addClass("lcpimg");
         $(".lcp").find("img").removeClass("center");
         $(".lcp").find("img").removeClass("borderless");
-        $('.containerN').css({ "grid-template-rows": "5vh 25vh 17vh 17vh" });
+        $('.containerN').css({ "grid-template-rows": "10vh 25vh 15vh 17vh" });
         $('.containerN').css({ "grid-template-columns": "auto 35vw 25vw 10vw 25vw auto" });
     }
 

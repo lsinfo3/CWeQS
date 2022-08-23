@@ -20,18 +20,27 @@ function getLCPTestConditions() {
         if (PLT[p] == 2000) {
             let LCP = [1000];
             for (var i in LCP) {
+		if (withBlog) {
+			conditions.push({ "url": "static/html/blog.html", "page": "blog", "lcp": LCP[i], "lcppic": 3, "firstpaint": (PLT[p] / 4), "tttext": (PLT[p] / 2), "ttimages": (PLT[p] * 0.75), "plt": PLT[p] });
+		}
                 conditions.push({ "url": "static/html/news.html", "page": "news", "lcp": LCP[i], "lcppic": 3, "firstpaint": (PLT[p] / 4), "tttext": (PLT[p] / 2), "ttimages": (PLT[p] * 0.75), "plt": PLT[p] });
                 conditions.push({ "url": "static/html/agency.html", "page": "agency", "lcp": LCP[i], "lcppic": 2, "firstpaint": (PLT[p] / 4), "tttext": (PLT[p] / 2), "ttimages": (PLT[p] * 0.75), "plt": PLT[p] });
             }
         } else if (PLT[p] == 5000) {
             let LCP = [1000, 1500];
             for (var i in LCP) {
+		if (withBlog) {
+			conditions.push({ "url": "static/html/blog.html", "page": "blog", "lcp": LCP[i], "lcppic": 3, "firstpaint": (PLT[p] / 4), "tttext": (PLT[p] / 2), "ttimages": (PLT[p] * 0.75), "plt": PLT[p] });
+		}
                 conditions.push({ "url": "static/html/news.html", "page": "news", "lcp": LCP[i], "lcppic": 2, "firstpaint": (PLT[p] / 4), "tttext": (PLT[p] / 2), "ttimages": (PLT[p] * 0.75), "plt": PLT[p] });
                 conditions.push({ "url": "static/html/agency.html", "page": "agency", "lcp": LCP[i], "lcppic": 1, "firstpaint": (PLT[p] / 4), "tttext": (PLT[p] / 2), "ttimages": (PLT[p] * 0.75), "plt": PLT[p] });
             }
         } else {
             let LCP = [1500, 7500];
             for (var i in LCP) {
+		if (withBlog) {
+			conditions.push({ "url": "static/html/blog.html", "page": "blog", "lcp": LCP[i], "lcppic": 3, "firstpaint": (PLT[p] / 4), "tttext": (PLT[p] / 2), "ttimages": (PLT[p] * 0.75), "plt": PLT[p] });
+		}
                 conditions.push({ "url": "static/html/news.html", "page": "news", "lcp": LCP[i], "lcppic": 1, "firstpaint": (PLT[p] / 4), "tttext": (PLT[p] / 2), "ttimages": (PLT[p] * 0.75), "plt": PLT[p] });
                 conditions.push({ "url": "static/html/agency.html", "page": "agency", "lcp": LCP[i], "lcppic": 3, "firstpaint": (PLT[p] / 4), "tttext": (PLT[p] / 2), "ttimages": (PLT[p] * 0.75), "plt": PLT[p] });
             }
